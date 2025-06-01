@@ -1,4 +1,5 @@
-const quizQuestions =[{
+// Quiz data
+const quizQuestions = [ {
         "header": "1.The most important ethical concepts in the process of reviewing experts are",
         "choice1": "Plagiarism and forgery",
         "choice2": "Publishing and intellectual property",
@@ -883,148 +884,146 @@ const quizQuestions =[{
 "correct": 2
 }];
 
-        let currentQuestionIndex = 0;
-        let score = 0;
-        let selectedAnswer = null;
+let currentQuestionIndex = 0;
+let score = 0;
+let selectedAnswer = null;
 
-        // Initialize quiz
-        function initializeQuiz() {
-            document.getElementById('totalQuestions').textContent = quizQuestions.length;
-            document.getElementById('totalQuestionsCounter').textContent = quizQuestions.length;
-            loadQuestion();
+// Initialize quiz
+function initializeQuiz() {
+    document.getElementById('totalQuestions').textContent = quizQuestions.length;
+    document.getElementById('totalQuestionsCounter').textContent = quizQuestions.length;
+    loadQuestion();
+}
+
+// Load current question
+function loadQuestion() {
+    if (currentQuestionIndex >= quizQuestions.length) {
+        showFinalResults();
+        return;
+    }
+
+    const question = quizQuestions[currentQuestionIndex];
+    selectedAnswer = null;
+
+    // Update question counter
+    document.getElementById('currentQuestion').textContent = currentQuestionIndex + 1;
+
+    // Update question text
+    document.getElementById('questionText').textContent = question.header;
+
+    // Create choices
+    const choicesContainer = document.getElementById('choicesContainer');
+    choicesContainer.innerHTML = '';
+
+    const choices = [question.choice1, question.choice2, question.choice3, question.choice4];
+    
+    choices.forEach((choice, index) => {
+        const choiceBtn = document.createElement('button');
+        choiceBtn.className = 'choice-btn';
+        choiceBtn.innerHTML = `
+            <i class="fas fa-circle me-3"></i>
+            <strong>${String.fromCharCode(65 + index)}.</strong> ${choice}`
+        ;
+        choiceBtn.onclick = () => selectAnswer(index + 1, choiceBtn);
+        choicesContainer.appendChild(choiceBtn);
+    });
+
+    // Hide next button
+    document.getElementById('nextBtn').style.display = 'none';
+
+    // Add fade-in animation
+    document.getElementById('questionContainer').className = 'fade-in';
+}
+
+// Handle answer selection
+function selectAnswer(choiceNumber, buttonElement) {
+    if (selectedAnswer !== null) return; // Prevent multiple selections
+
+    selectedAnswer = choiceNumber;
+    const question = quizQuestions[currentQuestionIndex];
+    const correctAnswer = question.correct;
+    
+    // Disable all choice buttons
+    const allChoices = document.querySelectorAll('.choice-btn');
+    allChoices.forEach(btn => btn.classList.add('disabled'));
+
+    // Show correct answer with lamb icon
+    allChoices.forEach((btn, index) => {
+        if (index + 1 === correctAnswer) {
+            btn.classList.add('correct');
+            btn.innerHTML = 
+            `   <i class="fas fa-sheep lamb-icon me-2"></i>
+                <strong>${String.fromCharCode(65 + index)}.</strong> ${question['choice' + (index + 1)]} 
+                <i class="fas fa-check-circle ms-2"></i>
+                `
+            ;
+        } else if (index + 1 === selectedAnswer && selectedAnswer !== correctAnswer) {
+            btn.classList.add('incorrect');
+            btn.innerHTML = `
+                <i class="fas fa-times-circle me-2"></i>
+                <strong>${String.fromCharCode(65 + index)}.</strong> ${question['choice' + (index + 1)]}
+                `
+            ;
         }
+    });
 
-        // Load current question
-        function loadQuestion() {
-            if (currentQuestionIndex >= quizQuestions.length) {
-                showFinalResults();
-                return;
-            }
+    // Update score if correct        
+    if (selectedAnswer === correctAnswer) {
+        score++;
+        // Add celebration effect
+        buttonElement.classList.add('pulse');
+    }
 
-            const question = quizQuestions[currentQuestionIndex];
-            selectedAnswer = null;
+    // Update score display
+    document.getElementById('scoreDisplay').textContent = score;
 
-            // Update question counter
-            document.getElementById('currentQuestion').textContent = currentQuestionIndex + 1;
+    // Show next button
+    document.getElementById('nextBtn').style.display = 'inline-block';
+}
 
-            // Update question text
-            document.getElementById('questionText').textContent = questionheader;
+// Move to next question
+function nextQuestion() {
+    currentQuestionIndex++;
+    loadQuestion();
+}
 
-            // Create choices
-            const choicesContainer = document.getElementById('choicesContainer');
-            choicesContainer.innerHTML = '';
+// Show final results
+function showFinalResults() {
+    document.getElementById('quizContent').style.display = 'none';
+    document.getElementById('finalResults').style.display = 'block';
+    
+    const percentage = Math.round((score / quizQuestions.length) * 100);
+    
+    document.getElementById('finalScore').textContent = score;
+    document.getElementById('finalTotal').textContent = quizQuestions.length;
+    document.getElementById('scorePercentage').textContent = `${percentage}%`;
+    
+    let message = '';
+    if (percentage >= 90) {
+        message = '🏆 Excellent! You\'re a quiz master!';
+    } else if (percentage >= 70) {
+        message = '👏 Great job! Well done!';
+    } else if (percentage >= 50) {
+        message = '👍 Good effort! Keep learning!';
+    } else {
+        message = '📚 Keep studying and try again!';
+    }
+    
+    document.getElementById('scoreMessage').textContent = message;
+}
 
-            const choices = [question.choice1, question.choice2, question.choice3, question.choice4];
-            
-            choices.forEach((choice, index) => {
-                const choiceBtn = document.createElement('button');
-                choiceBtn.className = 'choice-btn';
-                choiceBtn.innerHTML = `
-                    <i class="fas fa-circle me-3"></i>
-                    <strong>${String.fromCharCode(65 + index)}.</strong> ${choice}`
-                ;
-                choiceBtn.onclick = () => selectAnswer(index + 1, choiceBtn);
-                choicesContainer.appendChild(choiceBtn);
-            });
+// Restart quiz
+function restartQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    selectedAnswer = null;
+    
+    document.getElementById('scoreDisplay').textContent = '0';
+    document.getElementById('quizContent').style.display = 'block';
+    document.getElementById('finalResults').style.display = 'none';
+    
+    loadQuestion();
+}
 
-            // Hide next button
-            document.getElementById('nextBtn').style.display = 'none';
-
-            // Add fade-in animation
-            document.getElementById('questionContainer').className = 'fade-in';
-        }
-
-        // Handle answer selection
-        function selectAnswer(choiceNumber, buttonElement) {
-            if (selectedAnswer !== null) return; // Prevent multiple selections
-
-            selectedAnswer = choiceNumber;
-            const question = quizQuestions[currentQuestionIndex];
-            const correctAnswer = questioncorrect
-            
-            // Disable all choice buttons
-            const allChoices = document.querySelectorAll('.choice-btn');
-            allChoices.forEach(btn => btn.classList.add('disabled'));
-
-            // Showcorrectanswer with lamb icon
-            allChoices.forEach((btn, index) => {
-                if (index + 1 === correctAnswer) {
-                    btn.classList.add(correct);
-                    btn.innerHTML = 
-                    `   <i class="fas fa-sheep lamb-icon me-2"></i>
-                        <strong>${String.fromCharCode(65 + index)}.</strong> ${question['choice' + (index + 1)]} 
-                        <i class="fas fa-check-circle ms-2"></i>
-                        `
-                    ;
-                } else if (index + 1 === selectedAnswer && selectedAnswer !== correctAnswer) {
-                    btn.classList.add('incorrect');
-                    btn.innerHTML = `
-                        <i class="fas fa-times-circle me-2"></i>
-                        <strong>${String.fromCharCode(65 + index)}.</strong> ${question['choice' + (index + 1)]}
-                        `
-                    ;
-                }
-            });
-
-            // Update score ifcorrect        
-                if (selectedAnswer === correctAnswer) {
-                score++;
-                // Add celebration effect
-                buttonElement.classList.add('pulse');
-            }
-
-            // Update score display
-            document.getElementById('scoreDisplay').textContent = score;
-
-            // Show next button
-            document.getElementById('nextBtn').style.display = 'inline-block';
-        }
-
-        // Move to next question
-        function nextQuestion() {
-            currentQuestionIndex++;
-            loadQuestion();
-        }
-
-        // Show final results
-        function showFinalResults() {
-            document.getElementById('quizContent').style.display = 'none';
-            document.getElementById('finalResults').style.display = 'block';
-            
-            const percentage = Math.round((score / quizQuestions.length) * 100);
-            
-            document.getElementById('finalScore').textContent = score;
-            document.getElementById('finalTotal').textContent = quizQuestions.length;
-            document.getElementById('scorePercentage').textContent = `${percentage}%`;
-            
-            let message = '';
-            if (percentage >= 90) {
-                message = '🏆 Excellent! You\'re a quiz master!';
-            } else if (percentage >= 70) {
-                message = '👏 Great job! Well done!';
-            } else if (percentage >= 50) {
-                message = '👍 Good effort! Keep learning!';
-            } else {
-                message = '📚 Keep studying and try again!';
-            }
-            
-            document.getElementById('scoreMessage').textContent = message;
-        }
-
-        // Restart quiz
-        function restartQuiz() {
-            currentQuestionIndex = 0;
-            score = 0;
-            selectedAnswer = null;
-            
-            document.getElementById('scoreDisplay').textContent = '0';
-            document.getElementById('quizContent').style.display = 'block';
-            document.getElementById('finalResults').style.display = 'none';
-            
-            loadQuestion();
-        }
-
-        // Start the quiz when page loads
-        document.addEventListener('DOMContentLoaded', initializeQuiz);
-
-
+// Start the quiz when page loads
+document.addEventListener('DOMContentLoaded', initializeQuiz);
