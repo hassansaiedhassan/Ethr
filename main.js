@@ -1,5 +1,5 @@
-// Quiz data
-const quizQuestions = [ {
+
+const quizQuestions = [{
         "header": "1.The most important ethical concepts in the process of reviewing experts are",
         "choice1": "Plagiarism and forgery",
         "choice2": "Publishing and intellectual property",
@@ -883,15 +883,30 @@ const quizQuestions = [ {
 "choice4": "..............",
 "correct": 2
 }];
-
+let shuffledIndices = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let selectedAnswer = null;
 
+// Shuffle helper
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
 // Initialize quiz
 function initializeQuiz() {
+    shuffledIndices = [...Array(quizQuestions.length).keys()];
+    shuffleArray(shuffledIndices);
+
     document.getElementById('totalQuestions').textContent = quizQuestions.length;
     document.getElementById('totalQuestionsCounter').textContent = quizQuestions.length;
+
+    currentQuestionIndex = 0;
+    score = 0;
+    selectedAnswer = null;
     loadQuestion();
 }
 
@@ -902,7 +917,7 @@ function loadQuestion() {
         return;
     }
 
-    const question = quizQuestions[currentQuestionIndex];
+    const question = quizQuestions[shuffledIndices[currentQuestionIndex]];
     selectedAnswer = null;
 
     // Update question counter
@@ -916,14 +931,14 @@ function loadQuestion() {
     choicesContainer.innerHTML = '';
 
     const choices = [question.choice1, question.choice2, question.choice3, question.choice4];
-    
+
     choices.forEach((choice, index) => {
         const choiceBtn = document.createElement('button');
         choiceBtn.className = 'choice-btn';
         choiceBtn.innerHTML = `
             <i class="fas fa-circle me-3"></i>
-            <strong>${String.fromCharCode(65 + index)}.</strong> ${choice}`
-        ;
+            <strong>${String.fromCharCode(65 + index)}.</strong> ${choice}
+        `;
         choiceBtn.onclick = () => selectAnswer(index + 1, choiceBtn);
         choicesContainer.appendChild(choiceBtn);
     });
@@ -940,9 +955,9 @@ function selectAnswer(choiceNumber, buttonElement) {
     if (selectedAnswer !== null) return; // Prevent multiple selections
 
     selectedAnswer = choiceNumber;
-    const question = quizQuestions[currentQuestionIndex];
+    const question = quizQuestions[shuffledIndices[currentQuestionIndex]];
     const correctAnswer = question.correct;
-    
+
     // Disable all choice buttons
     const allChoices = document.querySelectorAll('.choice-btn');
     allChoices.forEach(btn => btn.classList.add('disabled'));
@@ -951,26 +966,23 @@ function selectAnswer(choiceNumber, buttonElement) {
     allChoices.forEach((btn, index) => {
         if (index + 1 === correctAnswer) {
             btn.classList.add('correct');
-            btn.innerHTML = 
-            `   <i class="fas fa-sheep lamb-icon me-2"></i>
+            btn.innerHTML = `
+                <i class="fas fa-sheep lamb-icon me-2"></i>
                 <strong>${String.fromCharCode(65 + index)}.</strong> ${question['choice' + (index + 1)]} 
                 <i class="fas fa-check-circle ms-2"></i>
-                `
-            ;
+            `;
         } else if (index + 1 === selectedAnswer && selectedAnswer !== correctAnswer) {
             btn.classList.add('incorrect');
             btn.innerHTML = `
                 <i class="fas fa-times-circle me-2"></i>
                 <strong>${String.fromCharCode(65 + index)}.</strong> ${question['choice' + (index + 1)]}
-                `
-            ;
+            `;
         }
     });
 
     // Update score if correct        
     if (selectedAnswer === correctAnswer) {
         score++;
-        // Add celebration effect
         buttonElement.classList.add('pulse');
     }
 
@@ -991,13 +1003,13 @@ function nextQuestion() {
 function showFinalResults() {
     document.getElementById('quizContent').style.display = 'none';
     document.getElementById('finalResults').style.display = 'block';
-    
+
     const percentage = Math.round((score / quizQuestions.length) * 100);
-    
+
     document.getElementById('finalScore').textContent = score;
     document.getElementById('finalTotal').textContent = quizQuestions.length;
     document.getElementById('scorePercentage').textContent = `${percentage}%`;
-    
+
     let message = '';
     if (percentage >= 90) {
         message = '🏆 Excellent! You\'re a quiz master!';
@@ -1008,21 +1020,16 @@ function showFinalResults() {
     } else {
         message = '📚 Keep studying and try again!';
     }
-    
+
     document.getElementById('scoreMessage').textContent = message;
 }
 
 // Restart quiz
 function restartQuiz() {
-    currentQuestionIndex = 0;
-    score = 0;
-    selectedAnswer = null;
-    
     document.getElementById('scoreDisplay').textContent = '0';
     document.getElementById('quizContent').style.display = 'block';
     document.getElementById('finalResults').style.display = 'none';
-    
-    loadQuestion();
+    initializeQuiz(); // reshuffle and restart
 }
 
 // Start the quiz when page loads
