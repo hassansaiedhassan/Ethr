@@ -191,7 +191,7 @@ const quizQuestions =[{
         "correct": 3
     },
     {
-        "header": "23.WIPO is......",
+        "header": "23.WIPO is World Intellectual Property Organization......",
         "choice1": "World innovation political organization",
         "choice2": "World Committee of Editors of Medical Journals",
         "choice3": "World Commission on the Ethics of Science, Technology",
