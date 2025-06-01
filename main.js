@@ -808,7 +808,90 @@ const quizQuestions = [
         "choice3": "IRS",
         "choice4": "NIH",
         "correct": 1
-    }
+    },
+    {
+"header": "1. Julius Caesar” and his bewilderment of killing or not killing “Brutus”, and the motives for killing him were that he was like a serpent.",
+"choice1": "true",
+"choice2": "false",
+"choice3": "..............",
+"choice4": "..............",
+"correct": 2
+},
+{
+"header": "2. In Terri Schiavo story, a similar case establishes that terry Schiavo’s doctor were wrong about the singer’s grandson Pat Bun, named Ryan Corbin.",
+"choice1": "true",
+"choice2": "false",
+"choice3": "..............",
+"choice4": "..............",
+"correct": 1
+},
+{
+"header": "3. Robert Millikan received the Nobel Prize for ethics 1923",
+"choice1": "true",
+"choice2": "false",
+"choice3": "..............",
+"choice4": "..............",
+"correct": 2
+},
+{
+"header": "4. Kennedy institute for ethics 1971 was established at Harvard University.",
+"choice1": "true",
+"choice2": "false",
+"choice3": "..............",
+"choice4": "..............",
+"correct": 2
+},
+{
+"header": "5. The role of “brakes” called “ethics of science is to stop the advancement of science.”",
+"choice1": "true",
+"choice2": "false",
+"choice3": "..............",
+"choice4": "..............",
+"correct": 2
+},
+{
+"header": "6. IRB Boards consist of International Doctors & Publishers.",
+"choice1": "true",
+"choice2": "false",
+"choice3": "..............",
+"choice4": "..............",
+"correct": 2
+},
+{
+"header": "7. Trolley problem guide you to become famous football player",
+"choice1": "true",
+"choice2": "false",
+"choice3": "..............",
+"choice4": "..............",
+"correct": 2
+},
+{
+"header": "8. Research should be based on invalid theory and experimentation with animals before humans.",
+"choice1": "true",
+"choice2": "false",
+"choice3": "..............",
+"choice4": "..............",
+"correct": 2
+},
+{
+"header": "9. The term Biosafety is used to describe those efforts that aim to reduce and eliminate potential risks from biotechnology and its products",
+"choice1": "true",
+"choice2": "false",
+"choice3": "..............",
+"choice4": "..............",
+"correct": 1
+},
+{
+"header": "10. Helsinki protocol aims to ensuring safe transport, handling and use of living modified organisms resulting from modern biotechnology.",
+"choice1": "true",
+"choice2": "false",
+"choice3": "..............",
+"choice4": "..............",
+"correct": 2
+}
+
+
+
 ];
 let shuffledIndices = [];
 let currentQuestionIndex = 0;
