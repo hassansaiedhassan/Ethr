@@ -228,7 +228,7 @@ const quizQuestions =[{
         "choice2": "Include Ehab as a second author",
         "choice3": "Insert Dr. Yamaguti as co-author",
         "choice4": "the above meet the ICIME requirements",
-        "correct": 2
+        "correct": 3
     },
     {
         "header": "The director in charge of Unit 731 in Manchuria is......",
@@ -244,7 +244,7 @@ const quizQuestions =[{
         "choice2": "Suzukusha",
         "choice3": "Hiokusha",
         "choice4": "Hibakusha",
-        "correct": 3
+        "correct": 4
     },
     {
         "header": "The discovery of...... opened the door to the techniques of gene cloning and transmission of living cells",
@@ -424,7 +424,7 @@ const quizQuestions =[{
         "correct": 2
     },
     {
-        "header": "29. Ehab is a graduate student working under the supervision of Prof. Dr. Yamaguti. Ehab uses Dr. Yamaguti's data to analyze a research question. Suzuki helped Ihab to analyze some data. Dr. Yamaguti assisted Ehab in writing the methods section in the research and reviewed the results and conclusions. How should authorship be in this case?",
+        "header": "29. Ehab is a graduate student working under the supervision of Prof. Dr. Yamaguti. Ehab uses Dr. Yamaguti's data to analyze a research question. Suzuki helped Ehab to analyze some data. Dr. Yamaguti assisted Ehab in writing the methods section in the research and reviewed the results and conclusions. How should authorship be in this case?",
         "choice1": "Ehab does not meet authorship standards",
         "choice2": "Include Ehab as second author",
         "choice3": "Insert Dr. Yamaguti as co-author",
@@ -719,14 +719,7 @@ const quizQuestions =[{
         "choice4": "Harvard",
         "correct": 2
     },
-    {
-        "header": "66. Japan established Unit 731 during WWII for:",
-        "choice1": "Prevention of epidemics",
-        "choice2": "Treatment of captives",
-        "choice3": "Testing biological weapons",
-        "choice4": "Water desalination",
-        "correct": 4
-    },
+
     {
         "header": "67. The second atomic bomb dropped on Japan in 1945 was named:",
         "choice1": "Fat man",
