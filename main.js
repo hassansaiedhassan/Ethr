@@ -30,7 +30,7 @@ const quizQuestions = [
         "choice2": "persistent vegetative state",
         "choice3": "brain damage state",
         "choice4": "temporary vegetative state",
-        "correct": 4
+        "correct": 2
     },
     {
         "header": "5.The scientific community tolerates with………",
@@ -102,7 +102,7 @@ const quizQuestions = [
         "choice2": "This will not affect the project",
         "choice3": "Yes, leave work in the project",
         "choice4": "Yes, she must report this potential conflict",
-        "correct": 3
+        "correct": 4
     },
     {
         "header": "14.Share data......",
@@ -225,9 +225,9 @@ const quizQuestions = [
         "correct": 4
     },
     {
-        "header": "Enab is a graduate student working under the supervision of Prof. Dr. Yamaguti. Enab uses Dr. Yamaguti's data to analyze a research question. Suzuki helped Inab to analyze some data. Dr. Yamaguti assisted Enab in writing the methods section in the research and reviewed the results and conclusions. How should authorship be in this case?",
-        "choice1": "Enab does not meet the authoring standards",
-        "choice2": "Include Enab as a second author",
+        "header": "Ehab is a graduate student working under the supervision of Prof. Dr. Yamaguti. Enab uses Dr. Yamaguti's data to analyze a research question. Suzuki helped Ehab to analyze some data. Dr. Yamaguti assisted Ehab in writing the methods section in the research and reviewed the results and conclusions. How should authorship be in this case?",
+        "choice1": "Ehab does not meet the authoring standards",
+        "choice2": "Include Ehab as a second author",
         "choice3": "Insert Dr. Yamaguti as co-author",
         "choice4": "the above meet the ICIME requirements",
         "correct": 2
@@ -392,14 +392,7 @@ const quizQuestions = [
         "choice4": "Conflict of interest",
         "correct": 2
     },
-    {
-        "header": "24. Number of people killed in Hiroshima after being hit by a bomb",
-        "choice1": "100,000–120,000",
-        "choice2": "70,000–80,000",
-        "choice3": "20,000–50,000",
-        "choice4": "700,000–800,000",
-        "correct": 1
-    },
+
     {
         "header": "25. Name of the first mammalian animal to be cloned",
         "choice1": "Douglas",
@@ -494,7 +487,7 @@ const quizQuestions = [
         "choice2": "Scientists pressing to lift ban",
         "choice3": "Laws prove benefits",
         "choice4": "Short timeline for research",
-        "correct": 4
+        "correct": 2
     },
     {
         "header": "37. Japan established Unit 731 in WWII for",
@@ -590,7 +583,7 @@ const quizQuestions = [
         "choice2": "Consent – Knowledge – Happiness",
         "choice3": "Voluntarism – Gain – Learning",
         "choice4": "Learning – Understanding – Participation",
-        "correct": 2
+        "correct": 1
     },
     {
         "header": "49. People may contribute to research but benefits go to others — this is against",
@@ -622,7 +615,7 @@ const quizQuestions = [
         "choice2": "Can be placed in the authors list",
         "choice3": "He can receive special honors from the publisher",
         "choice4": "Is considered a bribe and is separated from his work",
-        "correct": 2
+        "correct": 1
     },
     {
         "header": "53. Research misconduct does not include:",
@@ -734,7 +727,7 @@ const quizQuestions = [
         "choice2": "Treatment of captives",
         "choice3": "Testing biological weapons",
         "choice4": "Water desalination",
-        "correct": 3
+        "correct": 4
     },
     {
         "header": "67. The second atomic bomb dropped on Japan in 1945 was named:",
@@ -748,9 +741,9 @@ const quizQuestions = [
         "header": "68. (1927) Published a great treatise called Bioethics, speaking about moral relationships between humans, animals, and plants:",
         "choice1": "Robert Millikan",
         "choice2": "Van Potter",
-        "choice3": "Fritz Jahr",
+        "choice3": "Fritz yar",
         "choice4": "Daniel Callaghan",
-        "correct": 2
+        "correct": 3
     },
     {
         "header": "69. To capture malicious projects before they begin and to think globally about ethics:",
@@ -788,9 +781,9 @@ const quizQuestions = [
         "header": "73. A woman from Chicago was sentenced to starvation to death. Her name was:",
         "choice1": "Louisa Brown",
         "choice2": "Pauline Tyler",
-        "choice3": "Rita Parker",
-        "choice4": "Jesse Schiano",
-        "correct": 4
+        "choice3": "Terry Schiavo",
+        "choice4": "jusic jefferson",
+        "correct": 3
     },
     {
         "header": "74. Which body encourages the preservation of human dignity in research?",
@@ -798,7 +791,7 @@ const quizQuestions = [
         "choice2": "Universal Declaration of Human Rights",
         "choice3": "Universal Declaration of the Human Genome",
         "choice4": "World Declaration on Biological Diversity",
-        "correct": 3
+        "correct": 2
     },
     {
         "header": "75. Who invented PCR?",
@@ -817,7 +810,6 @@ const quizQuestions = [
         "correct": 1
     }
 ];
-
 let shuffledIndices = [];
 let currentQuestionIndex = 0;
 let score = 0;
