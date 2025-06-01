@@ -22,6 +22,22 @@ const quizQuestions =[{
         "choice4": "Fabricate, falsify, plagiarize data",
         "correct": 4
     },
+        {
+        "header": "71. ______ arise when a person’s obligations to a research project conflict with personal obligations:",
+        "choice1": "Unintentional plagiarism",
+        "choice2": "Intended plagiarism",
+        "choice3": "Research Misconduct",
+        "choice4": "Conflicts of interest",
+        "correct": 4
+    },
+       {
+        "header": "53. Research misconduct does not include:",
+        "choice1": "Defining the real error",
+        "choice2": "Impersonating some simple graphics",
+        "choice3": "Differences of opinion",
+        "choice4": "Only A and C",
+        "correct": 4
+    },
     {
         "header": "4.Terri Schiavo has Cardiac arrest - The lack of oxygen caused the brain to be destroyed, this state called ….",
         "choice1": "nervous bilateral state",
@@ -615,14 +631,7 @@ const quizQuestions =[{
         "choice4": "Is considered a bribe and is separated from his work",
         "correct": 1
     },
-    {
-        "header": "53. Research misconduct does not include:",
-        "choice1": "Defining the real error",
-        "choice2": "Impersonating some simple graphics",
-        "choice3": "Differences of opinion",
-        "choice4": "Only A and C",
-        "correct": 4
-    },
+ 
     {
         "header": "54. The most important ethical concepts in the process of reviewing experts are:",
         "choice1": "Plagiarism and forgery",
@@ -752,14 +761,7 @@ const quizQuestions =[{
         "choice4": "Conflict of interest",
         "correct": 2
     },
-    {
-        "header": "71. ______ arise when a person’s obligations to a research project conflict with personal obligations:",
-        "choice1": "Unintentional plagiarism",
-        "choice2": "Intended plagiarism",
-        "choice3": "Research Misconduct",
-        "choice4": "Conflicts of interest",
-        "correct": 4
-    },
+
     {
         "header": "72. The right information about a specific science to people andcorrectknowledge of its details are the main pillars for settingcorrect",
         "choice1": "Data collection",
