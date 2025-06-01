@@ -919,9 +919,9 @@ const quizQuestions =[{
             choices.forEach((choice, index) => {
                 const choiceBtn = document.createElement('button');
                 choiceBtn.className = 'choice-btn';
-                choiceBtn.innerHTML = 
+                choiceBtn.innerHTML = `
                     <i class="fas fa-circle me-3"></i>
-                    <strong>${String.fromCharCode(65 + index)}.</strong> ${choice}
+                    <strong>${String.fromCharCode(65 + index)}.</strong> ${choice}`
                 ;
                 choiceBtn.onclick = () => selectAnswer(index + 1, choiceBtn);
                 choicesContainer.appendChild(choiceBtn);
@@ -951,15 +951,17 @@ const quizQuestions =[{
                 if (index + 1 === correctAnswer) {
                     btn.classList.add(correct);
                     btn.innerHTML = 
-                        <i class="fas fa-sheep lamb-icon me-2"></i>
+                    `   <i class="fas fa-sheep lamb-icon me-2"></i>
                         <strong>${String.fromCharCode(65 + index)}.</strong> ${question['choice' + (index + 1)]} 
                         <i class="fas fa-check-circle ms-2"></i>
+                        `
                     ;
                 } else if (index + 1 === selectedAnswer && selectedAnswer !== correctAnswer) {
                     btn.classList.add('incorrect');
-                    btn.innerHTML = 
+                    btn.innerHTML = `
                         <i class="fas fa-times-circle me-2"></i>
                         <strong>${String.fromCharCode(65 + index)}.</strong> ${question['choice' + (index + 1)]}
+                        `
                     ;
                 }
             });
@@ -993,7 +995,7 @@ const quizQuestions =[{
             
             document.getElementById('finalScore').textContent = score;
             document.getElementById('finalTotal').textContent = quizQuestions.length;
-            document.getElementById('scorePercentage').textContent = ${percentage}%;
+            document.getElementById('scorePercentage').textContent = `${percentage}%`;
             
             let message = '';
             if (percentage >= 90) {
