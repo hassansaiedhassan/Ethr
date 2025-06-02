@@ -801,7 +801,7 @@ const quizQuestions = [{
         "choice2": "WIPO",
         "choice3": "IRb",
         "choice4": "NIH",
-        "correct": 1
+        "correct": 4
     },
     {
 "header": "1. Julius Caesar” and his bewilderment of killing or not killing “Brutus”, and the motives for killing him were that he was like a serpent.",
