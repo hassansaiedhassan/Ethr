@@ -711,7 +711,7 @@ const quizQuestions = [{
         "choice2": "Universal Declaration of Human Rights",
         "choice3": "Universal Declaration of the Human Genome",
         "choice4": "World Declaration on Biological Diversity",
-        "correct": 2
+        "correct": 3
     },
     {
         "header": "64. Who should be listed as the first author on the research?",
