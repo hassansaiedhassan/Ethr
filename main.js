@@ -203,7 +203,7 @@ const quizQuestions = [{
         "header": "24.What is the number of people killed in Hiroshima after being hit by a bomb?",
         "choice1": "100000-120000",
         "choice2": "20000-50000",
-        "choice3": "700000-800000",
+        "choice3": "70000-80000",
         "choice4": "Not provided",
         "correct": 3
     },
