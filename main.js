@@ -687,7 +687,7 @@ const quizQuestions = [{
         "choice2": "Cholera only caused by virus",
         "choice3": "Those diseases caused by bacteria, not viruses",
         "choice4": "The fungal diseases more dangerous",
-        "correct": 1
+        "correct": 3
     },
     {
         "header": "61. Through many attempts, Ishii was able to construct a clay bomb filled with:",
@@ -752,7 +752,7 @@ const quizQuestions = [{
         "choice2": "WIPO",
         "choice3": "IRS",
         "choice4": "NIH",
-        "correct": 2
+        "correct": 3
     },
     {
         "header": "70. The process where an article is submitted to a journal and reviewed by experts:",
