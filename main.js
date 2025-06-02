@@ -518,7 +518,7 @@ const quizQuestions = [{
         "choice2": "Little Women",
         "choice3": "Small Boy",
         "choice4": "Little Boy",
-        "correct": 3
+        "correct": 4
     },
     {
         "header": "39. IRB Boards consist of",
