@@ -750,7 +750,7 @@ const quizQuestions = [{
         "header": "69. To capture malicious projects before they begin and to think globally about ethics:",
         "choice1": "IGIME",
         "choice2": "WIPO",
-        "choice3": "IRS",
+        "choice3": "IRb",
         "choice4": "NIH",
         "correct": 3
     },
@@ -799,7 +799,7 @@ const quizQuestions = [{
         "header": "76. The organization that promotes bioethics awareness and monitoring is:",
         "choice1": "ICJME",
         "choice2": "WIPO",
-        "choice3": "IRS",
+        "choice3": "IRb",
         "choice4": "NIH",
         "correct": 1
     },
