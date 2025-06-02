@@ -389,7 +389,7 @@ const quizQuestions = [{
         "choice2": "Voluntarism - gain - learning",
         "choice3": "Consent - understanding - knowledge",
         "choice4": "Learning - Understanding - participation",
-        "correct": 3
+        "correct": 1
     },
     {
         "header": "They may contribute to the research and are at risk, but the benefits another group may enjoy this against ……..",
