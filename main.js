@@ -502,7 +502,7 @@ const quizQuestions = [{
         "choice2": "Scientists pressing to lift ban",
         "choice3": "Laws prove benefits",
         "choice4": "Short timeline for research",
-        "correct": 2
+        "correct": 3
     },
     {
         "header": "37. Japan established Unit 731 in WWII for",
